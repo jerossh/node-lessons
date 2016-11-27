@@ -16,6 +16,7 @@ for(var i = 0; i < 30; i++) {
   urls.push('http://datasource_' + i);
 }
 
+// 并发控制
 async.mapLimit(urls, 5, function (url, callback) {
   fetchUrl(url, callback);
 }, function (err, result) {
